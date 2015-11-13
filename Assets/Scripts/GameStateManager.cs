@@ -41,4 +41,8 @@ using System.Collections;
 	{
 		Messenger.Broadcast("changegamestate",STATES.TERM);
 	}
+	void OnDestroy()
+	{
+		Messenger.RemoveListener<string>("gamestatechanged", TransitionMade);
+	}
 }
